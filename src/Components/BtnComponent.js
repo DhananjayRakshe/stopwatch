@@ -1,20 +1,28 @@
 
 function BtnComponent(props) {
     return (
-        <div className="App">
 
+        <div className="App">
             {(props.status === 0) ?
-                <button onClick={props.start}>Start</button>
+                <button style={{margin: "5px"}} className="btn btn-primary" onClick={props.start}>Start</button>
                 : ""
             }
 
             {(props.status === 1) ?
                 <div>
-                    <button onClick={props.stop}>Stop</button>
-                    <button onClick={props.reset}>Reset</button>
+                    <button style={{margin: "5px"}} className="btn btn-danger" onClick={props.stop}>Stop</button>
+                    <button className="btn btn-info" onClick={props.reset}>Reset</button>
                 </div>
                 : ""
-            } 
+            }
+
+            {(props.status === 2) ?
+                <div>
+                    <button style={{margin: "5px"}} className="btn btn-success" onClick={props.resume}>Resume</button>
+                    <button  className="btn btn-info" onClick={props.reset}>Reset</button>
+                </div>
+                : ""
+            }
 
         </div>
     );
